@@ -52,4 +52,30 @@ const concatenatedProductNames = products.reduce(
 console.log(concatenatedProductNames);
 
 // 5. Find Extremes in Prices: Identify the highest and lowest-priced items, returning a string formatted as "Highest: X. Lowest: Y."
+const validPrices = products
+  .map((product) => parseFloat(product.price))
+  .filter((price) => !isAsyncThunkAction(price));
+
+// Find the highest and lowest prices
+const highestPrice = Math.max(...validPrices);
+const lowestPrice = Math.min(...validPrices);
+
+// Find the corresponding products
+const highestProduct = products.find(
+  (product) => parseFloat(product.price) === highestPrice
+);
+const lowestProduct = products.find(
+  (product) => parseFloat(product.price) === lowestPrice
+);
+
+// Format the result string
+const resultString = `Highest: ${highestProduct.product} - ${highestPrice}. Lowest: ${lowestProduct.product} - ${lowestPrice}.`;
+
+console.log(resultString);
+
 // 6. Object Transformation: Using Object.entries and reduce, recreate the products object with keys 'name' and 'cost', maintaining their original values.
+const transformedProducts = products.map(({ product, price }) => ({
+  name: product,
+  cost: price,
+}));
+console.log(transformedProducts);
