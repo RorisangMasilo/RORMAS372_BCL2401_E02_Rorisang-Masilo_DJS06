@@ -20,7 +20,7 @@ const filteredProducts = products.filter(
 console.log(filteredProducts);
 
 // 3. Price Manipulation: Filter out products without prices, convert string prices to numbers, and calculate the total price using reduce.
-filteredProducts = products.filter((product) => {
+const filteredByValidPrice = products.filter((product) => {
   // convert price to number and check if it's a valid number
   const price = Number(product.price);
   return !isNaN(price) && price > 0;
@@ -32,7 +32,7 @@ const productsWithNumericPrices = filteredProducts.map((product) => ({
 }));
 
 // Calculate the total price using reduce
-const totalPrice = productWithNumericPrice.reduce(
+const totalPrice = productsWithNumericPrices.reduce(
   (total, product) => total + product.price,
   0
 );
@@ -54,7 +54,7 @@ console.log(concatenatedProductNames);
 // 5. Find Extremes in Prices: Identify the highest and lowest-priced items, returning a string formatted as "Highest: X. Lowest: Y."
 const validPrices = products
   .map((product) => parseFloat(product.price))
-  .filter((price) => !isAsyncThunkAction(price));
+  .filter((price) => !isNaN(price));
 
 // Find the highest and lowest prices
 const highestPrice = Math.max(...validPrices);
