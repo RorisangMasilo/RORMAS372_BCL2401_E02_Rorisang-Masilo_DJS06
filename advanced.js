@@ -21,7 +21,7 @@ console.log(filteredProducts);
 
 // 3. Price Manipulation: Filter out products without prices, convert string prices to numbers, and calculate the total price using reduce.
 const filteredProducts = products.filter((product) => {
-  // convert price to number and check if it's a vaild number
+  // convert price to number and check if it's a valid number
   const price = Number(product.price);
   return !isNaN(price) && price > 0;
 });
