@@ -15,36 +15,13 @@ product.map((p) => p.product),
 products.filter((p) => p.product.length <= 5),
 
 // 3. Price Manipulation: Filter out products without prices, convert string prices to numbers, and calculate the total price using reduce.
-const filteredByValidPrice = products.filter((product) => {
-  // convert price to number and check if it's a valid number
-  const price = Number(product.price);
-  return !isNaN(price) && price > 0;
-});
-// Convert string prices to numbers
-const productsWithNumericPrices = filteredProducts.map((product) => ({
-  ...product,
-  price: Number(product.price),
-}));
-
-// Calculate the total price using reduce
-const totalPrice = productsWithNumericPrices.reduce(
-  (total, product) => total + product.price,
-  0
-);
-
-// Logging results
-console.log("Filtered Products:", productsWithNumericPrices);
-console.log("Total Price:", totalPrice);
+products.filter((p) => p.price && String(p.price).trim() !== "")
+.map((p) => ({ ...p, price: Number (p.price) }))
+.reduce((total, p) => total + p.price, 0),
 
 // 4. Concatenate Product Names: Use reduce to concatenate all product names into a single string.
-const concatenatedProductNames = products.reduce(
-  (accumulator, currentProduct) => {
-    return accumulator + currentProduct.product;
-  },
-  ""
-);
-// Logging results
-console.log(concatenatedProductNames);
+products.map((p) => p.product)
+.reduce((str, name) => str + name, ""),
 
 // 5. Find Extremes in Prices: Identify the highest and lowest-priced items, returning a string formatted as "Highest: X. Lowest: Y."
 const validPrices = products
