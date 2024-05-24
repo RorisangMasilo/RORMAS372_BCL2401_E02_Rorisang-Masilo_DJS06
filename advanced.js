@@ -7,17 +7,12 @@ const products = [
   { product: "coffee", price: 10 },
   { product: "tea", price: "" },
 ];
-
+console.log(
 // 1. Log Products: Iterate over the products array, logging each product name.
-products.forEach((product) => {
-  console.log(product.product);
-});
+product.map((p) => p.product),
 
 // 2. Filter by Name Length: Filter out products with names longer than 5 characters.
-const filteredProducts = products.filter(
-  (product) => product.product.length <= 5
-);
-console.log(filteredProducts);
+products.filter((p) => p.product.length <= 5),
 
 // 3. Price Manipulation: Filter out products without prices, convert string prices to numbers, and calculate the total price using reduce.
 const filteredByValidPrice = products.filter((product) => {
@@ -79,3 +74,4 @@ const transformedProducts = products.map(({ product, price }) => ({
   cost: price,
 }));
 console.log(transformedProducts);
+)
