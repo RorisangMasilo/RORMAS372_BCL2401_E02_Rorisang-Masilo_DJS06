@@ -35,5 +35,6 @@ console.log(
   // 6. Object Transformation: Using Object.entries and reduce, recreate the products object with keys 'name' and 'cost', maintaining their original values.
   products.reduce((acc, { product, price }) => {
     acc.push({ name: product, cost: price });
+    return acc;
   }, [])
 );
