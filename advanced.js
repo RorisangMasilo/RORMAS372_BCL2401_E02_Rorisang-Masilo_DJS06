@@ -27,9 +27,6 @@ products.map((p) => p.product)
 const pricedProducts = products.filter((p) => p.price && String(p.price).trim() !== "").map((p))
 })(),
 // 6. Object Transformation: Using Object.entries and reduce, recreate the products object with keys 'name' and 'cost', maintaining their original values.
-const transformedProducts = products.map(({ product, price }) => ({
-  name: product,
-  cost: price,
-}));
-console.log(transformedProducts);
-)
+products.reduce((acc, {product, price}) +> {acc.push({name: product, cost: price});
+}, [])
+);
