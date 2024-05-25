@@ -96,9 +96,9 @@ This project allowed me to dive deep into JavaScript's higher-order functions, e
 
 ##### Challenges and Learnings:
 
-**Combining Methods**: One of the key challenges was effectively combining multiple array methods to achieve the desired outcomes. This often required understanding the behavior of each method.
-**Declarative Approach**: The declarative programming style was another significant learning point. It emphasized writing code that clearly states what to do rather than how to do it, leading to more readable and maintainable code.
-**Advanced Exercises**: The advanced exercises, particularly the single console.log execution tasks, were both challenging and rewarding. They required a deep understanding of JavaScript's array methods and their outcomes or reciprocation.
+- **Combining Methods**: One of the key challenges was effectively combining multiple array methods to achieve the desired outcomes. This often required understanding the behavior of each method.
+- **Declarative Approach**: The declarative programming style was another significant learning point. It emphasized writing code that clearly states what to do rather than how to do it, leading to more readable and maintainable code.
+- **Advanced Exercises**: The advanced exercises, particularly the single console.log execution tasks, were both challenging and rewarding. They required a deep understanding of JavaScript's array methods and their outcomes or reciprocation.
 
 ##### Conclusion:
 
